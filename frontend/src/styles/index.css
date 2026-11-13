@@ -1,0 +1,318 @@
+/* ==============================================================================
+   StayFinder Design System - Luxury Editorial Aesthetic
+   Palette: Warm Ivory, Deep Forest Green, Muted Terracotta & Warm Brass
+   ============================================================================== */
+
+:root {
+  --color-ivory-light: #FAF8F5;
+  --color-ivory: #F5F2EB;
+  --color-ivory-dark: #EDE7DD;
+  --color-white: #FFFFFF;
+
+  --color-forest-dark: #12281E;
+  --color-forest: #1A382B;
+  --color-forest-light: #2A5240;
+  --color-forest-soft: #E8F0EC;
+
+  --color-terracotta: #C26747;
+  --color-terracotta-dark: #A95536;
+  --color-terracotta-light: #FBEFEA;
+
+  --color-brass: #C5A572;
+  --color-brass-dark: #9F8253;
+  --color-brass-light: #F5EFE4;
+
+  --color-charcoal: #1C2321;
+  --color-charcoal-soft: #38423E;
+  --color-muted: #6B7570;
+  --color-border: #E4DDD2;
+  --color-border-subtle: #EDE7DC;
+
+  --color-success: #2E6B4F;
+  --color-success-bg: #EAF4EE;
+  --color-error: #B93826;
+  --color-error-bg: #FBECE9;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --shadow-subtle: 0 2px 8px rgba(26, 56, 43, 0.04);
+  --shadow-card: 0 4px 20px rgba(26, 56, 43, 0.06);
+  --shadow-hover: 0 10px 30px rgba(26, 56, 43, 0.1);
+  --shadow-modal: 0 20px 40px rgba(18, 40, 30, 0.2);
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory-light);
+  color: var(--color-charcoal);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--color-forest-dark);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 600; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+h3 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
+h4 { font-size: 1.25rem; }
+
+p {
+  color: var(--color-charcoal-soft);
+  font-size: 0.975rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* ==============================================================================
+   Button Components
+   ============================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-forest);
+  color: var(--color-ivory-light);
+  border-color: var(--color-forest);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-forest-dark);
+  box-shadow: 0 4px 12px rgba(26, 56, 43, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-terracotta {
+  background-color: var(--color-terracotta);
+  color: var(--color-white);
+  border-color: var(--color-terracotta);
+}
+
+.btn-terracotta:hover:not(:disabled) {
+  background-color: var(--color-terracotta-dark);
+  box-shadow: 0 4px 14px rgba(194, 103, 71, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-forest);
+  border-color: var(--color-forest);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: var(--color-forest);
+  color: var(--color-ivory-light);
+}
+
+.btn-subtle {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  border-color: var(--color-border);
+}
+
+.btn-subtle:hover:not(:disabled) {
+  background-color: var(--color-ivory-dark);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ==============================================================================
+   Container & Layout Utilities
+   ============================================================================== */
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-brass-dark);
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  color: var(--color-muted);
+}
+
+/* ==============================================================================
+   Badge Components
+   ============================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+}
+
+.badge-forest {
+  background-color: var(--color-forest-soft);
+  color: var(--color-forest-dark);
+}
+
+.badge-brass {
+  background-color: var(--color-brass-light);
+  color: var(--color-brass-dark);
+}
+
+.badge-terracotta {
+  background-color: var(--color-terracotta-light);
+  color: var(--color-terracotta-dark);
+}
+
+.badge-success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.badge-error {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+/* ==============================================================================
+   Form Elements
+   ============================================================================== */
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-forest-dark);
+  margin-bottom: 0.4rem;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-charcoal);
+  font-size: 0.925rem;
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--color-forest);
+  box-shadow: 0 0 0 3px rgba(26, 56, 43, 0.08);
+}
+
+.form-input::placeholder {
+  color: #9CA3AF;
+}
+
+.form-error-text {
+  font-size: 0.775rem;
+  color: var(--color-error);
+  margin-top: 0.35rem;
+}
+
+/* ==============================================================================
+   Animation Utilities
+   ============================================================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
